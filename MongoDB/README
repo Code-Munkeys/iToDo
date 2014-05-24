@@ -51,12 +51,17 @@ MAIL LISTS AND IRC
   not be able to work with large (multi-gigabyte) databases.  However, 32 bit
   builds work fine with small development databases.
 
-http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
+
+WINDOWS SERVICE
 
 sc.exe create MongoDB binPath= "\"C:\MongoDB\bin\mongod.exe\" --service
 
 sc.exe delete MongoDB
 
-To specify a different data and log path Usine "Process Hacker 2" to edit the service binary path ie "C:\MongoDB\bin\mongod.exe"--logpath=f:\log\mongod.log --dbpath=f:\data\db --service
+To specify a different data and log path Using by editing the service binary path ie "C:\MongoDB\bin\mongod.exe"--logpath=c:\MongoDB\log\mongod.log --dbpath=c:\MongoDB\data --service
+
+LINKS
+
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
 
 http://stackoverflow.com/questions/17413588/mongodb-as-windows-service-and-setting-up-replicaset
