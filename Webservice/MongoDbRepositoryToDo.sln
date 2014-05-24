@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webservice", "Webservice\Webservice.csproj", "{58274BD8-68C9-4AF4-8636-DB214087D09A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7498A41A-C310-46C5-9C86-4138B9D08CD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbRepositoryToDo", "MongoDbRepositoryToDo\MongoDbRepositoryToDo.csproj", "{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{58274BD8-68C9-4AF4-8636-DB214087D09A}.Release|x86.ActiveCfg = Release|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7498A41A-C310-46C5-9C86-4138B9D08CD1}.Release|x86.ActiveCfg = Release|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3EC7AC9B-4EED-4944-AF1B-65AB6226C901}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDBTest.exe.config
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDBTest.exe
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDBTest.pdb
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\DataAccess.dll
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDB.Driver.dll
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDB.Bson.dll
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\DataAccess.pdb
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDB.Driver.xml
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\bin\Debug\MongoDB.Bson.xml
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\obj\Debug\MongoDBTest.csprojResolveAssemblyReference.cache
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\obj\Debug\MongoDBTest.exe
+C:\Coding\Csharp\MongoDbRepositoryTest\MongoDBTest\obj\Debug\MongoDBTest.pdb
