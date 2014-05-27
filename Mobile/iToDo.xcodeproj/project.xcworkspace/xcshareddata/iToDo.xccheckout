@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A31DB458-F882-4C15-A30D-5C7F153A880A</string>
+	<string>37E1EA6E-42D6-45D3-941C-CBCCE16F0185</string>
 	<key>IDESourceControlProjectName</key>
 	<string>iToDo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>43F29D32-3B95-48D7-972B-56E9204AB4E2</key>
-		<string>https://github.com/ayestaran/ToDo.git</string>
+		<key>123F39E1-ED01-45C1-AE8B-426E5CD0E628</key>
+		<string>https://github.com/ayestaran/iToDo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iToDo/iToDo.xcodeproj/project.xcworkspace</string>
+	<string>Mobile/iToDo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>43F29D32-3B95-48D7-972B-56E9204AB4E2</key>
+		<key>123F39E1-ED01-45C1-AE8B-426E5CD0E628</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ayestaran/ToDo.git</string>
+	<string>https://github.com/ayestaran/iToDo.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>43F29D32-3B95-48D7-972B-56E9204AB4E2</string>
+	<string>123F39E1-ED01-45C1-AE8B-426E5CD0E628</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>43F29D32-3B95-48D7-972B-56E9204AB4E2</string>
+			<string>123F39E1-ED01-45C1-AE8B-426E5CD0E628</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ToDo</string>
+			<string>iToDo</string>
 		</dict>
 	</array>
 </dict>

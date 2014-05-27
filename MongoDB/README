@@ -54,7 +54,7 @@ MAIL LISTS AND IRC
 
 WINDOWS SERVICE
 
-sc.exe create MongoDB binPath= "\"C:\MongoDB\bin\mongod.exe\" --service
+sc.exe create MongoDB binPath= "\"C:\MongoDB\bin\mongod.exe\" --service --config=\"C:\MongoDB\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
 
 sc.exe delete MongoDB
 
