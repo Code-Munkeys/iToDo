@@ -1,4 +1,4 @@
-iToDo - Designed and Developed by Franz-Josef Ayestaran
+iToDo - Developed by Franz-Josef Ayestaran
 =====
 
 A full stack approach to integrating mobile and server side technology.
