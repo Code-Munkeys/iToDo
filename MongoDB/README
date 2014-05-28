@@ -53,7 +53,7 @@ MAIL LISTS AND IRC
 
 WINDOWS SERVICE
 
-Install..
+Install...
 sc.exe create MongoDB binPath= "\"C:\MongoDB\bin\mongod.exe\" --service --auth --config=\"C:\MongoDB\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
 
 Delete...
@@ -63,10 +63,10 @@ WEBSERVICE CONNECTION STRING
 
 Authentication
 
-With..
+With...
 <add key="MongoDbConnectionString" value="mongodb://username:password@localhost/{DB_NAME}?authSource=admin" />
 
-Without..
+Without...
 <add key="MongoDbConnectionString" value="mongodb://localhost/{DB_NAME}?safe=true" />
   
 USEFUL LINKS
