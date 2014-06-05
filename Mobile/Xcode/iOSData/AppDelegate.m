@@ -32,6 +32,23 @@
     NSLog(@"UUID: %@",glbUuid);
     
     sleep(3);
+    
+    // Add app details to userAgent
+    
+    // Create a web view for the express purpose of getting the user agent.
+    UIWebView *tempWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    NSString *userAgent = [tempWebView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    
+    // Get the native app version and append it to user agent.
+    NSString *nativeAppVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    userAgent = [userAgent stringByAppendingString: [NSString stringWithFormat:@"; %@ v.%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"], nativeAppVersion]];
+    
+    // Store the full user agent in NSUserDefaults to be used by real web view.
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:userAgent, @"UserAgent", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+    
+    //-----------------------------
+    
     return YES;
 }
 
