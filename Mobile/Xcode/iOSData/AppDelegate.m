@@ -31,8 +31,6 @@
     
     NSLog(@"UUID: %@",glbUuid);
     
-    sleep(3);
-    
     // Add app details to userAgent
     
     // Create a web view for the express purpose of getting the user agent.
@@ -48,6 +46,8 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
     
     //-----------------------------
+    
+    sleep(3);
     
     return YES;
 }
