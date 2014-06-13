@@ -38,13 +38,17 @@
     NSString *userAgent = [tempWebView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     
     // Get the native app version and append it to user agent.
-    NSString *nativeAppVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    userAgent = [userAgent stringByAppendingString: [NSString stringWithFormat:@"; %@ v.%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"], nativeAppVersion]];
+    NSString *AppBuild = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    
+    NSString * AppVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    userAgent = [userAgent stringByAppendingString: [NSString stringWithFormat:@"; %@ Version %@ Build %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"], AppVersion, AppBuild]];
     
     // Store the full user agent in NSUserDefaults to be used by real web view.
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:userAgent, @"UserAgent", nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
     
+    NSLog(@"UserAgent: %@",userAgent);
     //-----------------------------
     
     sleep(3);
