@@ -19,7 +19,7 @@
 
 @implementation WebAPI
 
-NSString *WebAPIservice = @"https://secure.webapiservice.com/todowebservice/api/ToDo/";
+NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice/api/ToDo/";
 
 +(void)Get:(UITableView*)tableView View:(UIView*)view WebserviceLabel:(UILabel*)lblWebservice Objects:(NSMutableArray*)objects Guid:(NSMutableArray*)guid
 {
