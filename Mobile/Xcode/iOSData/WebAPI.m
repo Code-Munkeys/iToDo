@@ -21,6 +21,18 @@
 
 NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice/api/ToDo/";
 
+NSString *BasicAuthenticationCredentials = @"user:P455w0rd"; // <username:password>
+
++(NSString*)EncryptCredentials:(NSString *)UsernamePassword
+{
+    //[self EncryptCredentials:@"adam@hitched.co.uk:medialab"]
+    NSString *decodeString = UsernamePassword;
+    //Encode String
+    NSData *encodeData = [decodeString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String = [encodeData base64EncodedStringWithOptions:0];
+    return base64String;
+}
+
 +(void)Get:(UITableView*)tableView View:(UIView*)view WebserviceLabel:(UILabel*)lblWebservice Objects:(NSMutableArray*)objects Guid:(NSMutableArray*)guid
 {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc]
@@ -30,10 +42,14 @@ NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice
     [view addSubview:spinner];
     [spinner startAnimating];
 
+    NSString *voiEncryptedCredentials = [self EncryptCredentials:BasicAuthenticationCredentials];
+    NSLog(@"Encrypted Login: %@", voiEncryptedCredentials);
+
     // create HTTP request and download JSON from the service
     NSURL *url = [NSURL URLWithString:[WebAPIservice stringByAppendingString:glbUuid]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:[@"Basic " stringByAppendingString:voiEncryptedCredentials] forHTTPHeaderField:@"Authorization"];
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
         
@@ -85,7 +101,10 @@ NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice
 {    
     // convert object to an NSData object containing JSON
     NSData *jsonData = [voiTask convertToJSONData];
-    
+   
+    NSString *voiEncryptedCredentials = [self EncryptCredentials:BasicAuthenticationCredentials];
+    NSLog(@"Encrypted Login: %@", voiEncryptedCredentials);
+
     // create an HTTP request to send JSON to the server
     
     NSString* urlFormatted = [NSString stringWithFormat:@"%@%@", WebAPIservice, [detailItem Guid]];
@@ -96,6 +115,7 @@ NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[@"Basic " stringByAppendingString:voiEncryptedCredentials] forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:jsonData];
     
     NSLog(@"URL Formatted: %@", urlFormatted);
@@ -124,6 +144,9 @@ NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice
     
     // create an HTTP request to send JSON to the server
     
+    NSString *voiEncryptedCredentials = [self EncryptCredentials:BasicAuthenticationCredentials];
+    NSLog(@"Encrypted Login: %@", voiEncryptedCredentials);
+
     NSString* urlFormatted = [NSString stringWithFormat:@"%@%@", WebAPIservice, [detailItem Guid]];
     
     NSURL *url = [NSURL URLWithString:urlFormatted];
@@ -132,6 +155,7 @@ NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice
     
     [request setHTTPMethod:@"PUT"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[@"Basic " stringByAppendingString:voiEncryptedCredentials] forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:jsonData];
     
     NSLog(@"URL Formatted: %@", urlFormatted);
@@ -153,13 +177,19 @@ NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice
 + (void)Delete:(NSString *)Guid
 {
     NSString* urlFormatted = [NSString stringWithFormat:@"%@%@", WebAPIservice, Guid];
+
+    // create an HTTP request to send JSON to the server
     
+    NSString *voiEncryptedCredentials = [self EncryptCredentials:BasicAuthenticationCredentials];
+    NSLog(@"Encrypted Login: %@", voiEncryptedCredentials);
+
     NSURL *url = [NSURL URLWithString:urlFormatted];
 	
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setHTTPMethod:@"DELETE"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[@"Basic " stringByAppendingString:voiEncryptedCredentials] forHTTPHeaderField:@"Authorization"];
     
     NSLog(@"URL Formatted: %@", urlFormatted);
     NSLog(@"URL: %@", url);
