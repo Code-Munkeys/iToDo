@@ -25,7 +25,6 @@ NSString *BasicAuthenticationCredentials = @"user:P455w0rd"; // <username:passwo
 
 +(NSString*)EncryptCredentials:(NSString *)UsernamePassword
 {
-    //[self EncryptCredentials:@"adam@hitched.co.uk:medialab"]
     NSString *decodeString = UsernamePassword;
     //Encode String
     NSData *encodeData = [decodeString dataUsingEncoding:NSUTF8StringEncoding];
