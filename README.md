@@ -8,6 +8,6 @@ Available on GitHub
 Project source code includes...
 
 1. Mobile App (Xcode5 Objective-C iOS7)
-2. Webservice (Visual Studio 2012 C# WebAPI)
+2. Restful Webservice (Visual Studio 2012 C# WebAPI)
 3. Database (MongoDB)
 
