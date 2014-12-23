@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+NSString *glbUuid;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

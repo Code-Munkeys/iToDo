@@ -12,23 +12,11 @@
  */
 
 #import "Task.h"
+#import "AppDelegate.h"
 
 @implementation Task
 
 - (NSString *)description {
-    
-    glbGuid = [self Guid];
-    glbTitle = [self Title];
-    glbDescription = [self Description];
-    glbAssignedDate = [self AssignedDate];
-    glbEstimatedDate = [self EstimatedDate];
-    glbCompletedDate = [self CompletedDate];
-    
-    NSString *convertedString = [[NSString alloc] initWithData:glbJsonData encoding:NSUTF8StringEncoding];
-
-    NSLog(@"%@",convertedString);
-    
-    //return convertedString;
     
 	return [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n%@\n%@\n%@\n%@\n%@", [self Title], [self Description], [self Uuid], [self AssignedDate], [self EstimatedDate], [self CompletedDate], [self Status], [self Image], [self Signature]];
 }
@@ -56,7 +44,6 @@
 		jsonData = [NSJSONSerialization dataWithJSONObject:newTask options:NSJSONWritingPrettyPrinted error:&jsonError];
 	}
     
-    glbJsonData = jsonData;
     return jsonData;
 }
 

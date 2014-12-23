@@ -12,6 +12,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
 
 @interface MasterViewController : UITableViewController
 

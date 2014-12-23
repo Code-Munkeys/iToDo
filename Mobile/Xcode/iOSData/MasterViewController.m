@@ -14,7 +14,9 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 
-@interface MasterViewController () {
+@interface MasterViewController ()
+{
+    Task *PushThrouhSeque;
     NSMutableArray *_objects;
     NSMutableArray *_guid;
 }
@@ -66,7 +68,7 @@
     [_objects removeAllObjects];
     [_guid removeAllObjects];
     
-    [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid];
+    [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid Uuid:glbUuid];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,13 +80,13 @@
 - (void)refreshTaskList:(id)sender
 {
     [self.tableView setEditing:NO animated:YES];
-    [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid];
+    [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid Uuid:glbUuid];
 }
 
 - (void)insertNewObject:(id)sender
 {
     [self NewTask];
-    [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid];
+    [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid Uuid:glbUuid];
     [self.tableView setEditing:NO animated:YES];
 }
 
@@ -103,12 +105,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    //Task *object2 = _objects[indexPath.row];
-    //glbUuid = [object2 Guid];
     
     Task *object = _objects[indexPath.row];
     cell.textLabel.text = [object Title];
+    PushThrouhSeque = object;
     
     return cell;
 }
@@ -126,7 +126,7 @@
         [_objects removeObjectAtIndex:indexPath.row];
         [_guid removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid];
+        [WebAPI Get:self.tableView View:self.view WebserviceLabel:lblWebservice Objects:_objects Guid:_guid Uuid:glbUuid];
 
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -139,6 +139,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+        
+        DetailViewController *Detail = segue.destinationViewController;
+        Detail.PushThroughSegue = PushThrouhSeque;
     }
 }
 
@@ -150,9 +153,7 @@
     [newTask setDescription:@"-"];
     [newTask setUuid:glbUuid];
     
-    glbAssignedDate = [Formatting TodayDateFormatted];
-    
-    [newTask setAssignedDate:glbAssignedDate];
+    [newTask setAssignedDate:[Formatting TodayDateFormatted]];
     [newTask setEstimatedDate:@"-"];
     [newTask setCompletedDate:@"-"];
     [newTask setStatus:@""];

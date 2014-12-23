@@ -12,6 +12,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
 
 @interface DetailViewController : UIViewController
 {
@@ -57,5 +58,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblUpdate;
 @property (strong, nonatomic) IBOutlet UILabel *lblNew;
 @property (strong, nonatomic) IBOutlet UIImageView *imgBlanking;
+
+@property (strong, nonatomic) Task *PushThroughSegue;
 
 @end

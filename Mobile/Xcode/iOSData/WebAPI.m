@@ -32,7 +32,7 @@ NSString *BasicAuthenticationCredentials = @"user:P455w0rd"; // <username:passwo
     return base64String;
 }
 
-+(void)Get:(UITableView*)tableView View:(UIView*)view WebserviceLabel:(UILabel*)lblWebservice Objects:(NSMutableArray*)objects Guid:(NSMutableArray*)guid
++(void)Get:(UITableView*)tableView View:(UIView*)view WebserviceLabel:(UILabel*)lblWebservice Objects:(NSMutableArray*)objects Guid:(NSMutableArray*)guid  Uuid:(NSString*)uuid
 {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc]
                                         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -45,7 +45,7 @@ NSString *BasicAuthenticationCredentials = @"user:P455w0rd"; // <username:passwo
     NSLog(@"Encrypted Login: %@", voiEncryptedCredentials);
 
     // create HTTP request and download JSON from the service
-    NSURL *url = [NSURL URLWithString:[WebAPIservice stringByAppendingString:glbUuid]];
+    NSURL *url = [NSURL URLWithString:[WebAPIservice stringByAppendingString:uuid]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:[@"Basic " stringByAppendingString:voiEncryptedCredentials] forHTTPHeaderField:@"Authorization"];

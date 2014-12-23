@@ -24,7 +24,6 @@
     #import "AppDelegate.h"
     #import "Filesystem.h"
     #import "Formatting.h"
-    #import "GlobalDetail.h"
     #import "NSJSONSerialization+JSONStrings.h"
     #import "Task.h"
     #import "WebAPI.h"

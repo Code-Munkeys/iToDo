@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) id detailItem;
 
-+(void)Get:(UITableView*)tableView View:(UIView*)view WebserviceLabel:(UILabel*)lblWebservice Objects:(NSMutableArray*)objects Guid:(NSMutableArray*)guid;
++(void)Get:(UITableView*)tableView View:(UIView*)view WebserviceLabel:(UILabel*)lblWebservice Objects:(NSMutableArray*)objects Guid:(NSMutableArray*)guid  Uuid:(NSString*)uuid;
 + (void)Insert:(id)detailItem new:(Task*)voiTask ShowAlert:(int)voiShowAlert;
 + (void)Update:(id)detailItem new:(Task*)voiTask ShowAlert:(int)voiShowAlert;
 + (void)Delete:(NSString *)Guid;

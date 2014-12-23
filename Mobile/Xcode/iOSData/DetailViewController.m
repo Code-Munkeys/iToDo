@@ -35,7 +35,7 @@
             txtEstimatedDate, lblAssignedDate, lblEstimatedDate,
             lblCompletedDate, lblAdd, lblUpdate, lblNew, imgBlanking,
             lblGUID, lblGUIDsequence, txtUuid, btnInsertOutlet,
-            btnUpdateOutlet, btnNewOutlet;
+            btnUpdateOutlet, btnNewOutlet, PushThroughSegue;
 
 #define TAG_INSERT 1
 #define TAG_UPDATE 2
@@ -43,6 +43,7 @@
 #pragma mark - Managing the detail item
 
 NSString *locExistingRecord = @"";
+NSString *locTextField;
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -60,25 +61,12 @@ NSString *locExistingRecord = @"";
 
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
-        txtTitle.text = glbTitle;
-        txtDescription.text = glbDescription;
-        //txtUuid.text = @"";
-        //txtUuid.text = [@"UUID: " stringByAppendingString:glbUuid];
-        txtUuid.text = glbGuid;
-        txtAssignedDate.text = glbAssignedDate;
-        txtEstimatedDate.text = glbEstimatedDate;
-        txtCompletedDate.text = glbCompletedDate;
-        
-        glbGuidPrevious = glbGuid;
-        glbTitlePrevious = glbTitle;
-        glbDescriptionPrevious = glbDescription;
-        glbUuidPrevious = glbUuid;
-        glbAssignedDatePrevious = glbAssignedDate;
-        glbEstimatedDatePrevious = glbEstimatedDate;
-        glbCompletedDatePrevious = glbCompletedDate;
-        glbImagePrevious = glbImagePrevious;
-        glbSignaturePrevious = glbSignature;
-        glbStatusPrevious = glbStatus;
+        txtTitle.text = PushThroughSegue.Title;
+        txtDescription.text = PushThroughSegue.Description;
+        txtUuid.text = PushThroughSegue.Guid;
+        txtAssignedDate.text = PushThroughSegue.AssignedDate;
+        txtEstimatedDate.text = PushThroughSegue.EstimatedDate;
+        txtCompletedDate.text = PushThroughSegue.CompletedDate;
     }
 }
 
@@ -96,6 +84,8 @@ NSString *locExistingRecord = @"";
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    NSLog(@"Profile PushThroughSegue: %@",PushThroughSegue);
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -211,7 +201,7 @@ NSString *locExistingRecord = @"";
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [txtTitle resignFirstResponder];
-    //[txtDescription resignFirstResponder];
+    [txtDescription resignFirstResponder];
     [txtAssignedDate resignFirstResponder];
     [txtEstimatedDate resignFirstResponder];
     [txtCompletedDate resignFirstResponder];
@@ -229,7 +219,7 @@ NSString *locExistingRecord = @"";
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [txtTitle resignFirstResponder];
-    //[txtDescription resignFirstResponder];
+    [txtDescription resignFirstResponder];
     [txtAssignedDate resignFirstResponder];
     [txtEstimatedDate resignFirstResponder];
     [txtCompletedDate resignFirstResponder];
@@ -295,7 +285,7 @@ NSString *locExistingRecord = @"";
     Task *newTask = [[Task alloc] init];
     [newTask setTitle:txtTitle.text];
     [newTask setDescription:txtDescription.text];
-    [newTask setUuid:glbUuid];
+    [newTask setUuid:PushThroughSegue.Uuid];
     [newTask setAssignedDate:txtAssignedDate.text];
     [newTask setEstimatedDate:txtEstimatedDate.text];
     [newTask setCompletedDate:txtCompletedDate.text];
@@ -312,7 +302,7 @@ NSString *locExistingRecord = @"";
     Task *newTask = [[Task alloc] init];
     [newTask setTitle:txtTitle.text];
     [newTask setDescription:txtDescription.text];
-    [newTask setUuid:glbUuid];
+    [newTask setUuid:PushThroughSegue.Uuid];
     [newTask setAssignedDate:txtAssignedDate.text];
     [newTask setEstimatedDate:txtEstimatedDate.text];
     [newTask setCompletedDate:txtCompletedDate.text];
@@ -355,7 +345,7 @@ NSString *locExistingRecord = @"";
 
 - (IBAction)txtTitleEditingDidBegin:(id)sender
 {
-    glbTextField = @"TITLE";
+    locTextField = @"TITLE";
 }
 
 - (IBAction)txtTitleEditingDidEnd:(id)sender
@@ -368,17 +358,12 @@ NSString *locExistingRecord = @"";
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
-    //[textView resignFirstResponder];
-}
-
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    //[textView resignFirstResponder];
+    [textView resignFirstResponder];
 }
 
 - (IBAction)txtAssignedDateEditingDidBegin:(id)sender
 {
-    glbTextField = @"DATES";
+    locTextField = @"DATES";
 }
 
 - (IBAction)txtAssignedDateEditingDidEnd:(id)sender
@@ -391,7 +376,7 @@ NSString *locExistingRecord = @"";
 
 - (IBAction)txtEstimatedDateEditingDidBegin:(id)sender
 {
-    glbTextField = @"DATES";
+    locTextField = @"DATES";
 }
 
 - (IBAction)txtEstimatedDateEditingDidEnd:(id)sender
@@ -404,7 +389,7 @@ NSString *locExistingRecord = @"";
 
 - (IBAction)txtCompletedDateEditingDidBegin:(id)sender
 {
-    glbTextField = @"DATES";
+    locTextField = @"DATES";
 }
 
 - (IBAction)txtCompletedDateEditingDidEnd:(id)sender
@@ -417,12 +402,12 @@ NSString *locExistingRecord = @"";
 
 - (void) keyboardWillShow: (NSNotification*) aNotification;
 {	
-    [Animation SlideViewUp:[self view] LabelType:glbTextField];
+    [Animation SlideViewUp:[self view] LabelType:locTextField];
 }
 
 - (void) keyboardWillHide: (NSNotification*) aNotification;
 {
-    [Animation SlideViewDown:[self view] LabelType:glbTextField];
+    [Animation SlideViewDown:[self view] LabelType:locTextField];
 }
 
 @end
