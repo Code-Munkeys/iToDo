@@ -60,7 +60,7 @@
     _guid = [[NSMutableArray alloc] init];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     lblUuid.textColor = [UIColor darkGrayColor];
     lblUuid.text = glbUuid;

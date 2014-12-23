@@ -88,17 +88,13 @@ NSString *locTextField;
     NSLog(@"Profile PushThroughSegue: %@",PushThroughSegue);
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self FourInchDetect];
     [self configureView];
     btnInsertOutlet.enabled = FALSE;
     btnUpdateOutlet.enabled = FALSE;
     locExistingRecord = @"Y";
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
 }
 
 -(void)FourInchDetect
