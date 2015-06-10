@@ -19,7 +19,7 @@
 
 @implementation WebAPI
 
-NSString *WebAPIservice = @"https://secure.webapiservice.com:8080/todowebservice/api/ToDo/";
+NSString *WebAPIservice = @"https://secure.webapiservice.com/todowebservice/api/ToDo/";
 
 NSString *BasicAuthenticationCredentials = @"user:P455w0rd"; // <username:password>
 
