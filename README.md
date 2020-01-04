@@ -3,7 +3,7 @@ iToDo - Developed by Franz-Josef Ayestaran
 
 A full stack approach to integrating mobile and server side technology.
 
-Available on GitHub
+Available on GitHub @ https://github.com/Code-Munkeys/iToDo
 
 Project source code includes...
 
