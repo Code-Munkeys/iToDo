@@ -8,6 +8,7 @@ Available on GitHub
 Project source code includes...
 
 1. Mobile App (Xcode11 Objective-C iOS13)
-2. Restful Webservice (Visual Studio 7 For Mac Community C# WebAPI)
+2. Restful Webservice C# WebAPI (MongoDB.Net Driver 1.8.3.9)
 3. Database (MongoDB 2.4.9)
+
 
