@@ -35,8 +35,9 @@ NSString *glbUuid;
     // Add app details to userAgent
     
     // Create a web view for the express purpose of getting the user agent.
-    UIWebView *tempWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
-    NSString *userAgent = [tempWebView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    WKWebView *tempWebView = [[WKWebView alloc] initWithFrame:CGRectZero];
+    
+    NSString *userAgent = tempWebView.customUserAgent;
     
     // Get the native app version and append it to user agent.
     NSString *AppBuild = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];

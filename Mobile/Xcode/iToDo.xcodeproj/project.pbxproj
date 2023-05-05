@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		629BCD142A052BD30099D8F2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629BCD132A052BD30099D8F2 /* WebKit.framework */; };
 		C382854819406C060038DA3D /* Filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C382854619406C060038DA3D /* Filesystem.m */; };
 		C87174D6175BD6A7007961E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87174D5175BD6A7007961E9 /* UIKit.framework */; };
 		C87174D8175BD6A7007961E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87174D7175BD6A7007961E9 /* Foundation.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		629BCD132A052BD30099D8F2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C382854619406C060038DA3D /* Filesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filesystem.m; sourceTree = "<group>"; };
 		C382854719406C060038DA3D /* Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filesystem.h; sourceTree = "<group>"; };
 		C87174D2175BD6A7007961E9 /* iToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629BCD142A052BD30099D8F2 /* WebKit.framework in Frameworks */,
 				C87174D6175BD6A7007961E9 /* UIKit.framework in Frameworks */,
 				C87174D8175BD6A7007961E9 /* Foundation.framework in Frameworks */,
 				C87174DA175BD6A7007961E9 /* CoreGraphics.framework in Frameworks */,
@@ -113,6 +116,7 @@
 		C87174D4175BD6A7007961E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				629BCD132A052BD30099D8F2 /* WebKit.framework */,
 				C87174D5175BD6A7007961E9 /* UIKit.framework */,
 				C87174D7175BD6A7007961E9 /* Foundation.framework */,
 				C87174D9175BD6A7007961E9 /* CoreGraphics.framework */,
@@ -421,12 +425,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 221120;
+				CURRENT_PROJECT_VERSION = 050523;
 				DEVELOPMENT_TEAM = ERTK8PGHDW;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSData/iToDo-Prefix.pch";
 				INFOPLIST_FILE = "iOSData/iToDo-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonktechnology.itodo;
 				PRODUCT_NAME = iToDo;
 				PROVISIONING_PROFILE = "";
@@ -444,12 +450,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 221120;
+				CURRENT_PROJECT_VERSION = 050523;
 				DEVELOPMENT_TEAM = ERTK8PGHDW;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSData/iToDo-Prefix.pch";
 				INFOPLIST_FILE = "iOSData/iToDo-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zonktechnology.itodo;
 				PRODUCT_NAME = iToDo;
 				PROVISIONING_PROFILE = "";

@@ -11,7 +11,7 @@
  programming style, standard, or be an adequate answer for any given problem.
  */
 
-#import <UIKit/UIKit.h>
+#import "WebKit/WebKit.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
